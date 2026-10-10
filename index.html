@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar Tugas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Daftar Tugas</h1>
+      <p id="info" class="info" aria-live="polite"></p>
+    </header>
+
+    <form id="form-tugas" class="form">
+      <label for="input-tugas" class="sr-only">Judul tugas</label>
+      <input id="input-tugas" type="text" placeholder="Tulis tugas baru…" autocomplete="off" required />
+      <button type="submit" class="btn btn-utama">Tambah tugas</button>
+    </form>
+
+    <div class="filter" role="group" aria-label="Filter tugas">
+      <button type="button" class="btn btn-filter aktif" data-filter="semua">Semua</button>
+      <button type="button" class="btn btn-filter" data-filter="belum">Belum Selesai</button>
+    </div>
+
+    <p id="pesan" class="pesan" role="status"></p>
+    <ul id="daftar-tugas" class="daftar"></ul>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

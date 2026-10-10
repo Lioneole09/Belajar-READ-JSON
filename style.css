@@ -1,0 +1,96 @@
+:root {
+  --bg: #f3f5f7;
+  --kertas: #ffffff;
+  --teks: #1d2730;
+  --redup: #667582;
+  --garis: #d9e0e6;
+  --aksen: #0b6e6e;
+  --aksen-gelap: #084f4f;
+  --bahaya: #b3261e;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.02em; }
+.info { margin: 0.25rem 0 1.5rem; color: var(--redup); }
+
+.form { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.form input {
+  flex: 1;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--kertas);
+}
+
+.btn {
+  font: inherit;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  background: var(--kertas);
+  color: var(--teks);
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--aksen); }
+.btn-utama { background: var(--aksen); border-color: var(--aksen); color: #fff; }
+.btn-utama:hover { background: var(--aksen-gelap); }
+
+.filter { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.btn-filter.aktif { background: var(--teks); border-color: var(--teks); color: #fff; }
+
+.pesan { margin: 1rem 0; color: var(--redup); }
+.pesan.error {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--bahaya);
+  background: #fdecea;
+  color: var(--bahaya);
+}
+
+.daftar { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+
+.tugas {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--kertas);
+  border: 1px solid var(--garis);
+  border-left: 4px solid var(--aksen);
+  border-radius: 6px;
+}
+.tugas .judul { flex: 1; overflow-wrap: anywhere; }
+.tugas.selesai { border-left-color: var(--garis); background: #eef1f3; }
+.tugas.selesai .judul { text-decoration: line-through; color: var(--redup); }
+
+.btn-hapus { color: var(--bahaya); }
+.btn-hapus:hover { border-color: var(--bahaya); }
+
+.btn:focus-visible, input:focus-visible {
+  outline: 3px solid #7fc4c4;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .form { flex-direction: column; }
+}
